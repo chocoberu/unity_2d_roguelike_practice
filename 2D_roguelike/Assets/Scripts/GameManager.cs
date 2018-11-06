@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null; // static은 클래스 자체에 속함 (인스턴스가 아닌)
     public BoardManager boardScript;
+    public int playerFoodPoints = 100;
+    [HideInInspector]public bool playersTurn = true; // 변수는 public이지만 에디터에서 숨김
     private int level = 3;
 	// Use this for initialization
 	void Awake() {
@@ -23,6 +25,10 @@ public class GameManager : MonoBehaviour {
 	void InitGame()
     {
         boardScript.SetupScene(level);
+    }
+    public void GameOver()
+    {
+        enabled = false;
     }
 	// Update is called once per frame
 	void Update () {
