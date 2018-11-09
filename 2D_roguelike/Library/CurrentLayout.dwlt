@@ -42,10 +42,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 583, y: 492}
+  m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 85
+  controlID: 67
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -207,10 +207,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 947
-  m_MinSize: {x: 306, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 86
+  controlID: 68
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -231,10 +231,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 573
-  m_MinSize: {x: 306, y: 221}
+  m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 26
+  controlID: 69
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -253,16 +253,16 @@ MonoBehaviour:
     y: 0
     width: 1152
     height: 573
-  m_MinSize: {x: 104, y: 121}
+  m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 18}
   - {fileID: 19}
   - {fileID: 12}
   - {fileID: 14}
-  m_Selected: 2
-  m_LastSelected: 3
+  m_Selected: 1
+  m_LastSelected: 2
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -309,14 +309,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.7901099
+    - e00: 0.7568421
       e01: 0
       e02: 0
-      e03: -24.505493
+      e03: -22.842102
       e10: 0
-      e11: 0.7901099
+      e11: 0.7568421
       e12: 0
-      e13: 199.63681
+      e13: 230.49684
       e20: 0
       e21: 0
       e22: 1
@@ -431,20 +431,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/_Complete-Game/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/_Complete-Game/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\MJH\Documents\unity_2d_roguelike_practice\2D_roguelike
+  m_LastProjectPath: C:\Users\M\Documents\GitHub\unity_2d_roguelike_practice\2D_roguelike
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 702f0000
-    m_LastClickedID: 12144
-    m_ExpandedIDs: 000000008e2d0000d02d0000062f000000ca9a3b
+    m_SelectedIDs: a02f0000
+    m_LastClickedID: 12192
+    m_ExpandedIDs: 00000000a22d0000e42d0000162e00001a2f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -472,7 +472,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008e2d0000d02d0000062f0000
+    m_ExpandedIDs: 00000000a22d0000e42d00001a2f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2a310000
+    m_SelectedIDs: f2290000
     m_LastClickedID: 0
     m_ExpandedIDs: 24f7ffff00000000
     m_RenameOverlay:
@@ -740,7 +740,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1

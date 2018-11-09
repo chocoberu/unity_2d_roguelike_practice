@@ -13,6 +13,7 @@ public class Enemy : MovingObject {
 
 	// Use this for initialization
 	protected override void Start () {
+        GameManager.instance.AddEnemyToList(this);
         animator = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         base.Start();
@@ -46,6 +47,7 @@ public class Enemy : MovingObject {
     protected override void OnCantMove<T>(T component)
     {
         player hitPlayer = component as player; // component 값을 player로 변환해서 넣음
+        animator.SetTrigger("enemyAttack");
         hitPlayer.LoseFood(playerDamage); // 플레이어의 LoseFood 호출
         //throw new NotImplementedException();
     }

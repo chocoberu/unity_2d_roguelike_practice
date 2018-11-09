@@ -26,7 +26,7 @@ public class player : MovingObject {
         GameManager.instance.playerFoodPoints = food;
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!GameManager.instance.playersTurn) return; // 플레이어의 턴이 아니라면 이하 코드 실행 방지
 
