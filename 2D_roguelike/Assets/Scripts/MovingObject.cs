@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using UnityEngine;
 // public abstrace 클래스
 // 플레이어와 적이 MovingObject 상속
@@ -9,6 +9,7 @@ public abstract class MovingObject : MonoBehaviour {
 
     public float moveTime = 0.1f;
     public LayerMask blockingLayer; // 이동할 공간이 열려있고, 그곳으로 이동하려 할때 충돌이 일어났는지 체크
+
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb2D;
     private float inverseMoveTime; //움직임을 더 효율적으로 계산하는데 사용

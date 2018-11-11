@@ -6,6 +6,9 @@ public class Wall : MonoBehaviour {
 
     public Sprite dmgSprite; // 플레이어가 벽을 때렸을 때 보여줄 스프라이트
     public int hp = 4;
+    public AudioClip chopSound1;
+    public AudioClip chopSound2;
+
     private SpriteRenderer spriteRenderer;
 	// Use this for initialization
 	void Awake () {
@@ -14,6 +17,7 @@ public class Wall : MonoBehaviour {
 	}
 	public void DamageWall(int loss)
     {
+        SoundManager.instance.RandomizeSfx(chopSound1, chopSound2);
         spriteRenderer.sprite = dmgSprite;
         hp -= loss;
         if (hp <= 0)

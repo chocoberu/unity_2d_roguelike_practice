@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+    public float levelStartDelay = 2f; // 레벨 시작전 대기시간 
     public float turnDelay = 0.1f; // 턴 사이 대기 시간 
     public static GameManager instance = null; // static은 클래스 자체에 속함 (인스턴스가 아닌)
-    public BoardManager boardScript;
+    
     public int playerFoodPoints = 100;
     [HideInInspector]public bool playersTurn = true; // 변수는 public이지만 에디터에서 숨김
 
-
-    private int level = 3;
+    private BoardManager boardScript;
+    private Text levelText;
+    private GameObject levelImage;
+    private bool doingSetup;
+    private int level = 1;
     private List<Enemy> enemies; // 적들의 위치 기록, 움직이도록 명령
     private bool enemiesMoving;
 	// Use this for initialization
@@ -28,20 +33,41 @@ public class GameManager : MonoBehaviour {
         boardScript = GetComponent<BoardManager>();
         InitGame();
 	}
-	void InitGame()
+    void OnLevelWasLoaded(int index)
     {
+        //Add one to our level number.
+        level++;
+        //Call InitGame to initialize our level.
+        InitGame();
+    }
+    void InitGame()
+    {
+        doingSetup = true;
+        levelImage = GameObject.Find("LevelImage");
+        levelText = GameObject.Find("LevelText").GetComponent<Text>();
+        levelText.text = "Day " + level;
+        levelImage.SetActive(true);
+        Invoke("HideLevelImage", levelStartDelay); // 타이틀 카드 보여진 뒤 꺼질 때 까지 2초 기다림
+
         enemies.Clear(); // 적 리스트 초기화
         boardScript.SetupScene(level);
+    }
+    private void HideLevelImage()
+    {
+        levelImage.SetActive(false);
+        doingSetup = false;
     }
     // Update is called once per frame
     void Update()
     {
-        if (playersTurn || enemiesMoving)
+        if (playersTurn || enemiesMoving || doingSetup)
             return;
         StartCoroutine(MoveEnemies());
     }
     public void GameOver()
     {
+        levelText.text = "After " + level + " days, you starved.";
+        levelImage.SetActive(true);
         enabled = false;
     }
 	

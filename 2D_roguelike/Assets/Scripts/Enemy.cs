@@ -9,7 +9,8 @@ public class Enemy : MovingObject {
     private Animator animator;
     private Transform target; // 플레이어 위치 저장, 적이 어디로 향할지 알려줌
     private bool skipMove; // 적이 턴마다 움직이게 하는데 사용
-
+    public AudioClip enemyAttack1;
+    public AudioClip enemyAttack2;
 
 	// Use this for initialization
 	protected override void Start () {
@@ -42,13 +43,15 @@ public class Enemy : MovingObject {
         }
         else
             xDir = target.position.x > transform.position.x ? 1 : -1;
-        AttemptMove<player>(xDir, yDir);
+        AttemptMove<Player>(xDir, yDir);
     }
     protected override void OnCantMove<T>(T component)
     {
-        player hitPlayer = component as player; // component 값을 player로 변환해서 넣음
-        animator.SetTrigger("enemyAttack");
+        Player hitPlayer = component as Player; // component 값을 player로 변환해서 넣음
+
         hitPlayer.LoseFood(playerDamage); // 플레이어의 LoseFood 호출
-        //throw new NotImplementedException();
+        animator.SetTrigger("enemyAttack");
+
+        SoundManager.instance.RandomizeSfx(enemyAttack1, enemyAttack2);
     }
 }
